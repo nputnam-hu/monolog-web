@@ -1,0 +1,22 @@
+.markdowndoc {
+  padding: 20px 0;
+}
+
+.markdowndoc h3 {
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 400;
+  margin: 16px 0 0px;
+}
+
+.markdowndoc h4 {
+  font-size: 16px;
+  margin: 16px 0 -8px;
+  font-weight: 600;
+}
+
+.markdowndoc p {
+  margin: 16px 0 20px;
+  font-size: 16px;
+  line-height: 130%;
+}
