@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import axios from "axios";
+import { Inter } from "next/font/google";
 import styles from "./page.module.css";
 import LeftBar, { LEFT_BAR_HEIGHT, TOP_BAR_HEIGHT } from "./components/LeftBar";
 import { useParams } from "next/navigation";
@@ -9,6 +10,8 @@ import TopBar from "./components/TopBar";
 import { useNotes } from "@/app/api";
 import DraftDocument from "./components/DraftDocument";
 
+const inter = Inter({ subsets: ["latin"] });
+
 export default function Note() {
   const { id: selectedNoteId } = useParams();
   const { notes } = useNotes();
@@ -16,7 +19,7 @@ export default function Note() {
     (n) => n.id.toString() === selectedNoteId.toString()
   );
   return (
-    <main className={styles.main}>
+    <main className={cs(styles.main, inter.className)}>
       <TopBar />
       <LeftBar notes={notes} selectedNoteId={selectedNoteId} />
       <div
