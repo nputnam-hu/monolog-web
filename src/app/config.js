@@ -1,5 +1,5 @@
 const config = {
-  apiUrl: "http://localhost:3001",
+  apiUrl: "https://monolog-server-bc1532d12299.herokuapp.com",
 };
 
 export default config;

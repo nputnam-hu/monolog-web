@@ -7,7 +7,7 @@ export function formatDate(m) {
     nextWeek: "dddd",
     lastDay: "[Yesterday]",
     lastWeek: "dddd",
-    sameElse: "DD/MM/YYYY",
+    sameElse: "M/D/YY",
   });
 }
 

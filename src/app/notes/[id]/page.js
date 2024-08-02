@@ -6,7 +6,7 @@ import LeftBar, { LEFT_BAR_HEIGHT, TOP_BAR_HEIGHT } from "./components/LeftBar";
 import { useParams } from "next/navigation";
 import TranscriptDocument from "./components/TranscriptDocument";
 import TopBar from "./components/TopBar";
-import { useNotes } from "@/app/hooks";
+import { useNotes } from "@/app/api";
 import DraftDocument from "./components/DraftDocument";
 
 export default function Note() {
@@ -23,8 +23,12 @@ export default function Note() {
         className={styles.content}
         style={{ marginTop: TOP_BAR_HEIGHT, marginLeft: LEFT_BAR_HEIGHT + 8 }}
       >
-        {/* <TranscriptDocument selectedNote={selectedNote} /> */}
-        <DraftDocument note={selectedNote} />
+        {!selectedNote?.drafts.length && (
+          <TranscriptDocument selectedNote={selectedNote} />
+        )}
+        {selectedNote?.drafts.length > 0 && (
+          <DraftDocument note={selectedNote} />
+        )}
       </div>
     </main>
   );

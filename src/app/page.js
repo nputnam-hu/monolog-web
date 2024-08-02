@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { fetchNotes, useNotes } from "./hooks";
+import { fetchNotes, useNotes } from "./api";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
   useEffect(() => {
     // Navigate to the first note's page after notes are fetched
     if (notes.length > 0) {
-      router.push(`/note/${notes[0].id}`);
+      router.push(`/notes/${notes[0].id}`);
     }
   }, [notes, router]);
 
