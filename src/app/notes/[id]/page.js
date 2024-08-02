@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import axios from "axios";
+import cs from "classnames";
 import { Inter } from "next/font/google";
 import styles from "./page.module.css";
 import LeftBar, { LEFT_BAR_HEIGHT, TOP_BAR_HEIGHT } from "./components/LeftBar";
